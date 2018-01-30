@@ -114,7 +114,7 @@
                     <div id="testi-carousel" class="testi-slider text-center wow fadeInUp">
                         @foreach($testimonios as $testimonio)
                             <div class="item">
-                                <img src="  " alt="" class="img-circle">
+                                <img src="{{ asset('storage/' . $testimonio->imagen) }}" alt="" class="img-circle">
                                 <blockquote>{{ $testimonio->testimonio }}</blockquote>
                                 <span class="testi-by">{{ $testimonio->nombre }}</span>
                             </div>
