@@ -1,6 +1,7 @@
 @extends('layouts.banners')
 
 @section('content')
+    @if ($eventos->count() > 0)
     <!-- section events begin -->
     <section id="page-events" class="no-padding">
         <div class="fullwidth">
@@ -29,16 +30,16 @@
             </div>
         </div>
         <div class="clearfix"></div>
-
     </section>
     <!-- section events close -->
+    @endif
 
     <!-- section countdown begin -->
     <section id="countdown-container" data-speed="5" data-type="background">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-6 wow fadeInLeft">
-                    <h3>Transforming Live, Restoring Hope</h3>
+                    <h3>TRANSFORMANDO EN VIVO, RESTAURANDO LA ESPERANZA</h3>
                     <span class="time">April 10, 2019 8:00 pm</span>
                 </div>
 
@@ -55,7 +56,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 wow fadeInLeft" data-wow-delay=".5s">
-                    <h1>Take Me To Church</h1>
+                    <h1>Llevame a la Iglesia
+                        </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
                     <p>
@@ -81,7 +83,7 @@
         <div class="fullwidth">
             <div class="one-fourth text-center">
                 <div class="title-area wow slideInLeft">
-                    <span>Ultimas</span>
+                    <span>Últimas</span>
                     <h1>Noticias</h1>
                 </div>
             </div>

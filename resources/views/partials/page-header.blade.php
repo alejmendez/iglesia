@@ -9,7 +9,7 @@
 					<div id="logo">
 						<div class="inner">
 							<a href="{{ route('index') }}">
-								<img src="{{ asset('storage/logos/logo-small.png') }}" alt="" class="logo-1">
+								<img src="{{ asset('storage/logos/logo-blanco-small.png') }}" alt="" class="logo-1">
 								<img src="{{ asset('storage/logos/logo-small.png') }}" alt="" class="logo-2">
 							</a>
 						</div>
