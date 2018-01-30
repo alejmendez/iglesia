@@ -3,18 +3,38 @@
 <!--[if IE 9]>    <html lang="es" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!--><html lang="es"><!--<![endif]-->
 <head>
-	@include('pagina::partials.head')
+	@include('partials.head')
 </head>
 
-<body class="size-1140">
-	@include('pagina::partials.page-header')
+<body>
+	<div id="preloader"></div>
+	<div id="wrapper">
+		@include('partials.page-header')
+		<!-- subheader begin -->
+        <section id="subheader" data-speed="2" data-type="background">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>
+							@yield('subheader')
+						</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- subheader close -->
 
-	<section>
-		@yield('content')
-	</section>
-	
-	@include('pagina::partials.page-footer')
+		<div class="clearfix"></div>
 
-	@include('pagina::partials.footer')
+		<!-- content begin -->
+        <div id="content">
+            <div class="container">
+				@yield('content')
+			</div>
+		</div>
+
+		@include('partials.page-footer')
+	</div>
+	@include('partials.footer')
 </body>
 </html>

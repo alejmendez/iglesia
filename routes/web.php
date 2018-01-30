@@ -15,7 +15,11 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'IndexController@show')->name('index');
+Route::get('noticias', 'PostsController@show')->name('posts');
+Route::get('noticia/{slug}', 'PostController@show')->name('post');
+Route::get('etiqueta/{slug}', 'PostTagsController@show')->name('tag');
+Route::get('categoria/{slug}', 'PostCategoriesController@show')->name('category');
 
 try {
     $pages = \TCG\Voyager\Models\Page::all();

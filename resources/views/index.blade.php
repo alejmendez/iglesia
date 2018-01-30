@@ -1,104 +1,45 @@
 @extends('layouts.banners')
 
 @section('content')
+    <!-- section events begin -->
     <section id="page-events" class="no-padding">
         <div class="fullwidth">
             <div class="one-fourth text-center">
                 <div class="title-area wow slideInLeft">
-                    <span>Upcoming</span>
-                    <h1>Events</h1>
+                    <span>Próximos</span>
+                    <h1>Eventos</h1>
                 </div>
             </div>
 
             <div class="three-fourth">
                 <div class="fx custom-carousel-1">
+                    @foreach($eventos as $evento)
                     <div class="item">
                         <div class="overlay">
-                            <span class="time">February 6, 2017</span>
+                            <span class="time">{{ $evento->created_at }}</span>
                             <a href="#">
-                                <h3>Family Baptism Class</h3>
+                                <h3>{{ $evento->titulo }}</h3>
                             </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
+                            <span class="desc">{{ $evento->resumen }}</span>
                         </div>
-                        <img src="img/events/pic%20(1).jpg" alt="">
+                        <img src="{{ asset('storage/' . $evento->imagen) }}" alt="">
                     </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <span class="time">February 10, 2017</span>
-                            <a href="#">
-                                <h3>Transforming Live</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
-                        </div>
-                        <img src="img/events/pic%20(2).jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <span class="time">February 20, 2017</span>
-                            <a href="#">
-                                <h3>Relationship With God</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
-                        </div>
-                        <img src="img/events/pic%20(3).jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <span class="time">February 26, 2017</span>
-                            <a href="#">
-                                <h3>Abundant Life</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
-                        </div>
-                        <img src="img/events/pic%20(4).jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <span class="time">March 1, 2017</span>
-                            <a href="#">
-                                <h3>God is Good</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
-                        </div>
-                        <img src="img/events/pic%20(5).jpg" alt="">
-                    </div>
-
-                    <div class="item">
-                        <div class="overlay">
-                            <span class="time">March 10, 2017</span>
-                            <a href="#">
-                                <h3>Jehovah Jireh</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
-                            </span>
-                        </div>
-                        <img src="img/events/pic%20(6).jpg" alt="">
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
         <div class="clearfix"></div>
 
     </section>
-    <!-- section close -->
+    <!-- section events close -->
 
-    <!-- section begin -->
+    <!-- section countdown begin -->
     <section id="countdown-container" data-speed="5" data-type="background">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-6 wow fadeInLeft">
                     <h3>Transforming Live, Restoring Hope</h3>
-                    <span class="time">April 10, 2017 8:00 pm</span>
+                    <span class="time">April 10, 2019 8:00 pm</span>
                 </div>
 
                 <div class="col-md-6 wow fadeInRight" data-wow-delay=".25s">
@@ -107,114 +48,7 @@
             </div>
         </div>
     </section>
-    <!-- section close -->
-
-    <!-- section begin -->
-    <section id="section-text">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                    <h2>About The Church</h2>
-                    <div class="divider-double"></div>
-                </div>
-
-                <div class="col-md-4 wow fadeInRight" data-wow-delay=".5s">
-                    <img src="img/misc/pic-1.jpg" class="img-responsive" alt="">
-                    <h3>Our Community</h3>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
-                    <br>
-                    <br>
-                    <a href="#" class="st-btn">Read More</a>
-                </div>
-                <div class="col-md-4 wow fadeInRight" data-wow-delay=".75s">
-                    <img src="img/misc/pic-2.jpg" class="img-responsive" alt="">
-                    <h3>Church Mission</h3>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
-                    <br>
-                    <br>
-                    <a href="#" class="st-btn">Read More</a>
-                </div>
-                <div class="col-md-4 wow fadeInRight" data-wow-delay="1s">
-                    <img src="img/misc/pic-3.jpg" class="img-responsive" alt="">
-                    <h3>Participate With Us</h3>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
-                    <br>
-                    <br>
-                    <a href="#" class="st-btn">Read More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section close -->
-
-    <!-- section begin -->
-    <section id="latest-sermons">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center wow fadeInUp">
-                    <h2>Latest Sermons</h2>
-                    <div class="divider-double"></div>
-                </div>
-
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="custom-col-3 wow flipInX">
-                        <div class="left-col">
-                            <img src="img/sermons/pic%20(1).jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="mid-col">
-                            <a href="#">
-                                <h3>Transforming Live, Restoring Hope</h3>
-                            </a>
-                            <div class="details"><span>By <a href="#">John Rook</a>, February 08, 2017</span></div>
-                        </div>
-                        <div class="right-col">
-                            <a href="#"><i class="fa fa-video-camera"></i></a>
-                            <a href="#"><i class="fa fa-volume-up"></i></a>
-                            <a href="#"><i class="fa fa-file-pdf-o"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="custom-col-3 wow flipInX">
-                        <div class="left-col">
-                            <img src="img/sermons/pic%20(2).jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="mid-col">
-                            <a href="#">
-                                <h3>Put Your Faith Into Action</h3>
-                            </a>
-                            <div class="details"><span>By <a href="#">Allan Poe</a>, February 15, 2017</span></div>
-                        </div>
-                        <div class="right-col">
-                            <a href="#"><i class="fa fa-video-camera"></i></a>
-                            <a href="#"><i class="fa fa-volume-up"></i></a>
-                            <a href="#"><i class="fa fa-file-pdf-o"></i></a>
-                        </div>
-                    </div>
-
-
-                    <div class="custom-col-3 wow flipInX">
-                        <div class="left-col">
-                            <img src="img/sermons/pic%20(3).jpg" alt="" class="img-responsive">
-                        </div>
-                        <div class="mid-col">
-                            <a href="#">
-                                <h3>Find And You Shall Seek</h3>
-                            </a>
-                            <div class="details"><span>By <a href="#">Ron Ward</a>, February 22, 2017</span></div>
-                        </div>
-                        <div class="right-col">
-                            <a href="#"><i class="fa fa-video-camera"></i></a>
-                            <a href="#"><i class="fa fa-volume-up"></i></a>
-                            <a href="#"><i class="fa fa-file-pdf-o"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section close -->
-
-
+    <!-- section countdown close -->
 
     <!-- section begin -->
     <section id="section-text-2" class="no-padding-bottom">
@@ -242,122 +76,35 @@
     </section>
     <!-- section close -->
 
-    <!-- section begin -->
+    <!-- section blog begin -->
     <section id="page-blog" class="no-padding">
-
         <div class="fullwidth">
             <div class="one-fourth text-center">
                 <div class="title-area wow slideInLeft">
-                    <span>Latest</span>
-                    <h1>Blog</h1>
+                    <span>Ultimas</span>
+                    <h1>Noticias</h1>
                 </div>
             </div>
 
             <div class="three-fourth">
                 <div class="custom-carousel-2">
-                    <div class="item-blog">
-                        <div class="inner">
-                            <span class="date">10 November</span>
-                            <a href="#">
-                                <h3>Gods goal for you</h3>
-                            </a>
-                            <span class="desc">The Bible says, "Give thanks in everything"  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </span>
+                    @foreach($posts as $post)
+                        <div class="item-blog">
+                            <div class="inner">
+                                <span class="date">{{ $post->create_at }}</span>
+                                <a href="{{ route('post', ['slug' => $post->slug]) }}">
+                                    <h3>{{ $post->title }}</h3>
+                                </a>
+                                <span class="desc">{{ $post->excerpt }}</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="item-blog even">
-                        <div class="inner">
-                            <span class="date">9 November</span>
-                            <a href="#">
-                                <h3>The Bible on Campus</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="item-blog">
-                        <div class="inner">
-                            <span class="date">8 November</span>
-                            <a href="#">
-                                <h3>A Faithful Witness</h3>
-                            </a>
-                            <span class="desc">Those who are prepared to witness and sensitive to opportunities the Lord opens up will find occasions on every hand to share Christ.
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="item-blog even">
-                        <div class="inner">
-                            <span class="date">7 November</span>
-                            <a href="#">
-                                <h3>Transfoming Live</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="item-blog">
-                        <div class="inner">
-                            <span class="date">6 November</span>
-                            <a href="#">
-                                <h3>Restoring Hope</h3>
-                            </a>
-                            <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </span>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
         <div class="clearfix"></div>
     </section>
-    <!-- section close -->
-
-    <!-- section begin -->
-    <section id="section-gallery">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2>From Gallery</h2>
-                    <div class="divider-double"></div>
-                </div>
-
-                <div id="gallery-isotope" class="col-md-12 wow fadeInUp" data-wow-delay=".25s">
-                    <div class="item long-pic">
-                        <a href="img/gallery/pic%20(1).jpg" data-gal="prettyPhoto[galllery]"><span class="overlay"></span></a>
-                        <img src="img/gallery/pic%20(1).jpg" alt="">
-                    </div>
-
-                    <div class="item small-pic">
-                        <a href="img/gallery/pic%20(2).jpg" data-gal="prettyPhoto[galllery]"><span class="overlay"></span></a>
-                        <img src="img/gallery/pic%20(2).jpg" alt="">
-                    </div>
-
-                    <div class="item wide-pic">
-                        <a href="img/gallery/pic%20(3).jpg" data-gal="prettyPhoto[galllery]"><span class="overlay"></span></a>
-                        <img src="img/gallery/pic%20(3).jpg" alt="">
-                    </div>
-
-                    <div class="item wide-pic">
-                        <a href="img/gallery/pic%20(4).jpg" data-gal="prettyPhoto[galllery]"><span class="overlay"></span></a>
-                        <img src="img/gallery/pic%20(4).jpg" alt="">
-                    </div>
-
-                    <div class="item small-pic">
-                        <a href="img/gallery/pic%20(5).jpg" data-gal="prettyPhoto[galllery]"><span class="overlay"></span></a>
-                        <img src="img/gallery/pic%20(5).jpg" alt="">
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- section close -->
+    <!-- section blog close -->
 
     <!-- section begin -->
     <section id="section-testimonial">
@@ -365,25 +112,13 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <div id="testi-carousel" class="testi-slider text-center wow fadeInUp">
-                        <div class="item">
-                            <img src="img/testi/pic%20(1).jpg" alt="" class="img-circle">
-                            <blockquote>Blessing theme has a real desire and heart for ministry within the local church</blockquote>
-                            <span class="testi-by">Aline Drummond</span>
-                        </div>
-                        <div class="item">
-                            <img src="img/testi/pic%20(2).jpg" alt="" class="img-circle">
-                            <blockquote>I Just wanted to let you know how pleased we are and how great the Blessing theme is working for our National Church </blockquote>
-                            <span class="testi-by">Mortimer Elmo</span>
-                        </div>
-                        <div class="item">
-                            <img src="img/testi/pic%20(3).jpg" alt="" class="img-circle">
-                            <blockquote>
-                                Get in touch with Blessing theme today and get ready to see your church grow!
-
-                            </blockquote>
-                            <span class="testi-by">Marina Leopold</span>
-                        </div>
-
+                        @foreach($testimonios as $testimonio)
+                            <div class="item">
+                                <img src="  " alt="" class="img-circle">
+                                <blockquote>{{ $testimonio->testimonio }}</blockquote>
+                                <span class="testi-by">{{ $testimonio->nombre }}</span>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

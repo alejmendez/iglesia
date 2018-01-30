@@ -230,6 +230,7 @@ return [
         'status_draft'     => 'draft',
         'status_pending'   => 'pending',
         'status_published' => 'published',
+        'tags'             => 'Tags',
         'title'            => 'Post Title',
         'title_sub'        => 'The title for your post',
         'update'           => 'Update Post',

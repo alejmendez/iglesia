@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $lenguage = 'es_ES.UTF-8';
+        //putenv("LANG=$lenguage");
+        setlocale(LC_ALL, $lenguage, 'Spanish_Spain.1252');
+        \Carbon\Carbon::setLocale(config('app.locale'));
     }
 
     /**

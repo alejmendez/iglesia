@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+// modelos
+use App\Evento;
+use App\Testimonio;
+use \TCG\Voyager\Models\Page;
+
 class PageController extends Controller
 {
-    public function index()
-    {
-        return $this->view('index');
-    }
-
     public function show()
     {
         $slug = request()->segment(1);
