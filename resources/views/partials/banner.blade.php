@@ -4,9 +4,11 @@
 		<div class="fullwidthbanner-container">
 			<div id="revolution-slider">
 				<ul>
+					@foreach(App\Banner::all() as $banner)
 					<li data-transition="fade" data-slotamount="10" data-masterspeed="1500">
 						<!--  BACKGROUND IMAGE -->
-						<img src="img-rev-slider/bg-1.jpg" alt="">
+						<img src="{{ asset('storage/' . $banner->imagen) }}" alt="">
+						@if ($banner->direccion == 'der')
 						<div class="tp-caption border-v lft"
 							data-x="540"
 							data-y="center"
@@ -23,7 +25,7 @@
 							data-start="1000"
 							data-easing="easeInOutCubic"
 							data-endspeed="300">
-							Transforming Live
+							{{ $banner->titulo }}
 						</div>
 
 						<div class="tp-caption lft custom-font-2"
@@ -32,7 +34,7 @@
 							data-speed="800"
 							data-start="800"
 							data-easing="easeInOutCubic">
-							Restoring Hope
+							{{ $banner->subtitulo }}
 						</div>
 
 						<div class="tp-caption sfb text-left"
@@ -41,23 +43,9 @@
 							data-speed="800"
 							data-start="1400"
 							data-easing="easeInOutCubic">
-							Transforming lives and societies through education, research and innovation.<br>
-							Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.<br>
+							{!! str_replace("\n", "<br>", $banner->descripcion) !!}
 						</div>
-
-						<div class="tp-caption sfb text-left"
-							data-x="600"
-							data-y="310"
-							data-speed="800"
-							data-start="1600"
-							data-easing="easeInOutCubic">
-							<a class="btn btn-slider" href="#">Read More</a>
-						</div>
-					</li>
-
-					<li data-transition="fade" data-slotamount="10" data-masterspeed="1500">
-						<!--  BACKGROUND IMAGE -->
-						<img src="img-rev-slider/bg-2.jpg" alt="">
+						@else
 						<div class="tp-caption custom-font-1 lft"
 							data-x="left"
 							data-y="140"
@@ -65,7 +53,7 @@
 							data-start="400"
 							data-easing="easeInOutCubic"
 							data-endspeed="300">
-							Put Your Faith
+							{{ $banner->titulo }}
 						</div>
 
 						<div class="tp-caption sfr custom-font-2"
@@ -74,7 +62,7 @@
 							data-speed="800"
 							data-start="800"
 							data-easing="easeInOutCubic">
-							Into Action
+							{{ $banner->subtitulo }}
 						</div>
 
 						<div class="tp-caption sfb text-left"
@@ -83,21 +71,11 @@
 							data-speed="800"
 							data-start="1200"
 							data-easing="easeInOutCubic">
-							Put your faith into action today and let your actions be fueled by your faith.<br>
-							Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.<br>
+							{!! str_replace("\n", "<br>", $banner->descripcion) !!}
 						</div>
-
-						<div class="tp-caption sfb text-left"
-							data-x="left"
-							data-y="310"
-							data-speed="800"
-							data-start="1600"
-							data-easing="easeInOutCubic">
-							<a class="btn btn-slider" href="#">Read More</a>
-						</div>
+						@endif
 					</li>
-
-
+					@endforeach
 				</ul>
 			</div>
 		</div>

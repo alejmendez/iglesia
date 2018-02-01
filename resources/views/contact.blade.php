@@ -97,7 +97,7 @@ $(function(){
         if(error == false){
             $("#send").attr({"disabled" : "true", "value" : "Enviando..." });
 
-            $.post('{{ route("contact") }}', {
+            $.post('{{ route("contact.send") }}', {
                 name : name,
                 email : email,
                 subject : 'Tienes correo electronico',
