@@ -25,6 +25,7 @@
         <!-- subheader close -->
 
 		<div class="clearfix"></div>
+		@yield('precontent')
 
 		<!-- content begin -->
         <div id="content">

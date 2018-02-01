@@ -11,7 +11,9 @@
 	<div id="wrapper">
 		@include('partials.page-header')
 		@include('partials.banner')
+
 		<div class="clearfix"></div>
+		@yield('precontent')
 
 		<!-- content begin -->
         <div id="content" class="no-padding">

@@ -20,6 +20,7 @@ Route::get('noticias', 'PostsController@show')->name('posts');
 Route::get('noticia/{slug}', 'PostController@show')->name('post');
 Route::get('etiqueta/{slug}', 'PostTagsController@show')->name('tag');
 Route::get('categoria/{slug}', 'PostCategoriesController@show')->name('category');
+Route::any('contact', 'ContactController@show')->name('contact');
 
 try {
     $pages = \TCG\Voyager\Models\Page::all();
