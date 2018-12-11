@@ -5,7 +5,7 @@ Nombre: {{ $data['name'] }}
 Correo: {{ $data['email'] }}
 Mensaje: {{ $data['message'] }}
 
-@component('mail::button')
+@component('mail::button', ['url' => ''])
 boton
 @endcomponent
 
